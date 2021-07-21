@@ -22,3 +22,5 @@ Route::any('/family/add_member',                        'Family\FamilyController
 Route::any('/family/load_family_list',                  'Family\FamilyController@load_family_list');
 Route::any('/family/get_info',                          'Family\FamilyController@get_info');
 Route::any('/family/delete',                            'Family\FamilyController@delete');
+Route::any('/family/edit',                              'Family\FamilyController@edit');
+Route::any('/family/update',                            'Family\FamilyController@update');

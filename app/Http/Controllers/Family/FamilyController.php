@@ -83,4 +83,29 @@ class FamilyController extends Controller
 
       return $return;
    }
+   public function edit()
+   {
+      $id                                                         = Request::input('id');
+      $response                                                   = Tbl_family_list::where('id',$id)->first();
+
+      return $response;
+   }
+   public function update()
+   {
+      $id                                                         = Request::input('id');
+      $data                                                       = Request::input('data');
+      
+      $update['last_name']                                        = $data['last_name'];       
+      $update['first_name']                                       = $data['first_name'];         
+      $update['middle_name']                                      = $data['middle_name'];          
+      $update['birthdate']                                        = $data['birthdate'];    
+      
+      Tbl_family_list::where('id',$id)->update($update);
+      
+      $return["status"]                                           = "success"; 
+      $return["status_code"]                                      = 200; 
+      $return["status_message"]                                   = "Deleted Successfully";
+      
+      return $return;
+   }
 }
