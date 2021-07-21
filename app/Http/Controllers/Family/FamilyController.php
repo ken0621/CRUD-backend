@@ -12,7 +12,8 @@ class FamilyController extends Controller
 {
    public function add_member()
    {
-      $family_id                                                  = Tbl_family_list::orderby("family_id", "asc")->pluck('family_id')->first() ?? 0 +1;
+      $family_id                                                  = Tbl_family_list::orderby("family_id","desc")->pluck('family_id')->first() ?? 0;
+      $family_id                                                  = $family_id + 1;
       $data                                                       = Request::input('data');
 
       if($data)
