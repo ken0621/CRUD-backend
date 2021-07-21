@@ -94,11 +94,12 @@ class FamilyController extends Controller
    {
       $id                                                         = Request::input('id');
       $data                                                       = Request::input('data');
-      
+
       $update['last_name']                                        = $data['last_name'];       
       $update['first_name']                                       = $data['first_name'];         
       $update['middle_name']                                      = $data['middle_name'];          
       $update['birthdate']                                        = $data['birthdate'];    
+      $update['updated_at']                                       = Carbon::now();    
       
       Tbl_family_list::where('id',$id)->update($update);
       
