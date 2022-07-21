@@ -66,8 +66,9 @@ class FamilyController extends Controller
 
       return $response;
    }
-   public function get_info()
+   public static function get_info()
    {
+      dd(1231213);
       $family_id                                                  = Request::input('family_id');
       $response                                                   = Tbl_family_list::where('family_id', $family_id)->get();
 
