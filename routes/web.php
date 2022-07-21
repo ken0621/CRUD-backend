@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::any('/family/load_family_list',                  'Family\FamilyController@load_family_list');
+Route::any('/spotify/registration',                  'Family\FamilyController@registration');
