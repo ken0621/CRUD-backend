@@ -15,7 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        $trusted_domains = ["http://localhost:4200", "http://localhost:4201","https://crud-frontend-c7h0s5egj-ken0621.vercel.app"];
+        $trusted_domains = ["http://localhost:4200", "http://localhost:4201","https://crud-frontend-xi.vercel.app"];
         
         if(isset($request->server()['HTTP_ORIGIN'])) 
         {
