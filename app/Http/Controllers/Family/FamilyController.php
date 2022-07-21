@@ -151,12 +151,14 @@ class FamilyController extends Controller
 
       $response = explode('"',$response);
 
+      dd($response);
+
       if($response[1] == 'error')
       {
          $return['status']             = 'error';
          $return['status_code']        = '500';
 
-         if(count($response) == 25)
+         if(count($response) > 13)
          {
             $return['status_message']  =  $response[23];
          }
