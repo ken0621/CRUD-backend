@@ -1,3 +1,3 @@
 <?php
 
-require __DIR__ .'/../Http/Controllers/Family/FamilyController.php';
+require __DIR__ .'/../public/index.php';
