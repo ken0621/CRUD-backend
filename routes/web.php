@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::any('/family/load_family_list',                  'Family\FamilyController@load_family_list');

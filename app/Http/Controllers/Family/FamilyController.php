@@ -59,7 +59,8 @@ class FamilyController extends Controller
    }
    public function load_family_list()
    {
-    dd("Nice Working");
+
+    dd("Nice Working", Request::input());
 
       $response                                                   = Tbl_family_list::where('archive',0)->select('family_id')->groupBy('family_id')->get();
 
