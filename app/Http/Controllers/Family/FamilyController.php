@@ -156,7 +156,7 @@ class FamilyController extends Controller
          $return['status']             = 'error';
          $return['status_code']        = '500';
 
-         if(count($response) > 13)
+         if(count($response) > 23)
          {
             $return['status_message']  =  $response[23];
          }
