@@ -151,8 +151,6 @@ class FamilyController extends Controller
 
       $response = explode('"',$response);
 
-      dd($response);
-
       if($response[1] == 'error')
       {
          $return['status']             = 'error';
