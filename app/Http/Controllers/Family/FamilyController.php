@@ -143,7 +143,7 @@ class FamilyController extends Controller
       curl_setopt($curl, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_ENCODING , "gzip");
-      curl_setopt($curl, CURLOPT_POSTFIELDS, '{"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":true},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fopen.spotify.com%2F&locale=us","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"87ed3a0e-1b06-46b9-8c21-783565613e2e","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://www.spotify.com/us/","referrer":""}}');
+      curl_setopt($curl, CURLOPT_POSTFIELDS, '{"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":false},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fopen.spotify.com%2F&locale=ph-en","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"cbd3dc81-1052-4f26-b801-5a9b9843bb03","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://www.spotify.com/ph-en/","referrer":""}}');
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
       $response                    = curl_exec($curl);
 
