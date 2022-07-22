@@ -143,13 +143,15 @@ class FamilyController extends Controller
       curl_setopt($curl, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_ENCODING , "gzip");
-      curl_setopt($curl, CURLOPT_POSTFIELDS, '{"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":true},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fopen.spotify.com%2F__noul__%3Fl2l%3D1%26nd%3D1&locale=ca-en","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"940b919a-bbca-4ec8-817c-54d263139ae4","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://www.spotify.com/ca-en/api/account/menu/","referrer":"checkout"}}');
+      curl_setopt($curl, CURLOPT_POSTFIELDS, '{"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":false},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fwww.spotify.com%2Fca-en%2Fpurchase%2Foffer%2Fdefault-trial-1m%2F%3Fcountry%3DCA&locale=ca-en","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"5ab5fa0964f53c4755ee3378133a51c3","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://open.spotify.com/?sp_cid=5ab5fa0964f53c4755ee3378133a51c3&device=desktop","referrer":""}}');
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
       $response                    = curl_exec($curl);
 
       curl_close($curl);
 
       $response = explode('"',$response);
+
+      // {"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":true},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fopen.spotify.com%2F__noul__%3Fl2l%3D1%26nd%3D1&locale=ca-en","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"940b919a-bbca-4ec8-817c-54d263139ae4","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://www.spotify.com/ca-en/api/account/menu/","referrer":"checkout"}}
 
       if($response[1] == 'error')
       {
