@@ -137,11 +137,12 @@ class FamilyController extends Controller
       'content-type: application/json',
       // 'origin: https://www.spotify.com',
       // 'referer: https://www.spotify.com/',
-      'sec-fetch-mode: cors',
-      'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36'));
+      // 'sec-fetch-mode: cors',
+      // 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36'
+   ));
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-      // curl_setopt($curl, CURLOPT_PROXY, "37.72.141.132:8080");
+      // curl_setopt($curl, CURLOPT_PROXY, "178.254.18.170:3128");
       // curl_setopt($curl, CURLOPT_PROXYUSERPWD, "mix101YIUHCZR:ptiovdE5");
       curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
@@ -151,7 +152,7 @@ class FamilyController extends Controller
       curl_setopt($curl, CURLOPT_POSTFIELDS, '{"account_details":{"birthdate":"'.$birthdate.'","consent_flags":{"eula_agreed":true,"send_email":true,"third_party_email":false},"display_name":"MusikaPinas-'.rand(10000, 9999999999).'","email_and_password_identifier":{"email":"'.$email.'","password":"'.$pass.'"},"gender":2},"callback_uri":"https://www.spotify.com/signup/challenge?forward_url=https%3A%2F%2Fopen.spotify.com%2F&locale=ph-en","client_info":{"api_key":"a1e486e2729f46d6bb368d6b2bcda326","app_version":"v2","capabilities":[1],"installation_id":"cbd3dc81-1052-4f26-b801-5a9b9843bb03","platform":"www"},"tracking":{"creation_flow":"","creation_point":"https://www.spotify.com/ph-en/","referrer":""}}');
       $response                    = curl_exec($curl);
 
-      // dd($response);
+      dd($response);
       $response = explode('"',$response);
 
 
