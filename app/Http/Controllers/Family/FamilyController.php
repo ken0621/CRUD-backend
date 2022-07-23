@@ -135,16 +135,16 @@ class FamilyController extends Controller
       curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       'accept: */*',
       'content-type: application/json',
-      'origin: https://www.spotify.com',
-      'referer: https://www.spotify.com/',
+      // 'origin: https://www.spotify.com',
+      // 'referer: https://www.spotify.com/',
       'sec-fetch-mode: cors',
       'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36'));
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-      curl_setopt($curl, CURLOPT_PROXY, null);
-      // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "user:pass");
-      // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-      // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+      // curl_setopt($curl, CURLOPT_PROXY, "37.72.141.132:8080");
+      // curl_setopt($curl, CURLOPT_PROXYUSERPWD, "mix101YIUHCZR:ptiovdE5");
+      curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+      curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
       curl_setopt($curl, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
       curl_setopt($curl, CURLOPT_ENCODING , "gzip");
