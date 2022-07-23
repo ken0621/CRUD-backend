@@ -140,6 +140,8 @@ class FamilyController extends Controller
       'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36'));
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+      curl_setopt($ch, CURLOPT_PROXY, "35.186.224.25:443");
+      // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "user:pass");
       curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
       curl_setopt($curl, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
